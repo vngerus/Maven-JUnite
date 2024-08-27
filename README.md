@@ -141,6 +141,7 @@ Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com
   ```
 ## 7. Configuración de Notificaciones
  ### Slack como preferencia 
+ ![Jenkins](https://github.com/vngerus/Maven-JUnite/blob/main/img/jenkins.png)
 
 ## 8. Conclusión:
 Al seguir implementando estas mejoras y expandiendo las capacidades del pipeline de CI/CD, el equipo de desarrollo puede aumentar la calidad, seguridad y eficiencia del ciclo de vida del software, logrando un proceso de entrega más robusto y confiable.
