@@ -22,8 +22,7 @@ El objetivo de esta documentación es detallar el proceso de implementación de 
 - ![Apache Maven](https://img.shields.io/badge/Apache%20Maven-C71A36?style=for-the-badge&logo=Apache%20Maven&logoColor=white)
 - ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white)
 - **JUnit 5**
-  **JaCoCo**
-...
+- **JaCoCo**
 
 ## 3. Creación de Pruebas Unitarias
 ### Ejemplo de Prueba
@@ -97,7 +96,7 @@ pipeline {
 }
 ```
 
-## 6. Resultados del testing:
+## 5. Resultados del testing:
 com.example.AppTest.txt 
 ```java
 -------------------------------------------------------------------------------
@@ -112,7 +111,7 @@ Test set: com.example.CalculatorTest
 -------------------------------------------------------------------------------
 Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.001 s - in com.example.CalculatorTest
 ```
-## 7. Configuración de informes de Cobertura de Código:
+## 6. Configuración de informes de Cobertura de Código:
 -  JaCoCo: Se utiliza debido a su compatibilidad con las versiones más recientes de Java, incluido JDK 17. Cobertura, por otro lado, no es compatible con JDK 9 en adelante, lo que limita su uso en proyectos modernos.
 -  Configuración del Plugin de JaCoCo:
   ```xml
