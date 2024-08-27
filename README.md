@@ -47,41 +47,41 @@ pipeline {
     agent any
 
     tools {
-        maven 'M3'
+        maven 'M3' // Acá se carga el mvn según el nombre que le tengas
     }
 
     stages {
         stage('Checkout') {
             steps {
-                git branch: 'main', url: 'https://github.com/vngerus/Maven-JUnite.git'
+                git branch: 'main', url: 'https://github.com/vngerus/Maven-JUnite.git' // Elige tu reposiorio, aclarando la rama a trabajar
             }
         }
-
+    // Construcción del mvn
         stage('Build') {
             steps {
                 bat 'mvn clean compile'
             }
         }
-
+    // Testeo del mvn
         stage('Test') {
             steps {
                 bat 'mvn test'
             }
-
+    // Con esto en tu carpeta se crea un nuevo archivo "target" el cual te deja tus reportes de los testeos
             post {
                 always {
                     junit '**/target/surefire-reports/*.xml'
                 }
             }
         }
-
+    // Reportes del estado cubierto por JaCoCo
         stage('Code Coverage') {
             steps {
                 bat 'mvn jacoco:report'
             }
         }
     }
-
+    // Notificaciones para ser enviados al Slack
     post {
         always {
             slackSend (message: "Jenkins Build ${currentBuild.fullDisplayName} Estado actual:")
